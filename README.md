@@ -1,6 +1,6 @@
-# Rapid prototyping with Spring Boot and AngularJS
-This example demonstrates how **Spring Boot**, **Spring Data JPA** and in the front-end **AngularJS** can be used together to write web applications easily.
-In this code example I'm demonstrating this by providing a full CRUD-based web application in about 150 lines of code (100 lines of Java code and 50 lines of JavaScript code).
+# ng-springboot-markets-dashboard - Rapid prototyping with Spring Boot and AngularJS
+This example demonstrates how **Spring Boot**, **Spring Data JPA** and in the front-end **AngularJS** can be used together to write micro services based web applications easily.
+In this code example I'm demonstrating this by creating a full fledged Financial Markets analysis dashboard for Africa's top 3 markets.
 
 ## Frameworks
 
@@ -16,8 +16,11 @@ AngularJS is a MVC based framework for web applications, written in JavaScript. 
 
 #### Spring Boot
 One of the hassles while creating web applications using the Spring Framework is that it involves a lot of configuration. Spring Boot makes it possible to write configuration-less web application because it does a lot for you out of the box.
-For example, if you add HSQLDB as a dependency to your application, it will automatically provide a datasource to it.
+For example, if you add H2 as a dependency to your application, it will automatically provide a datasource to it.
 If you add the spring-boot-starter-web dependency, then you can start writing controllers for creating a web application.
+
+One of the brightest spots of a Spring Boot application is the Actuator, which adds several helpful management endpoints for application mnitoring. We are going to use actuators in this demo to access endpoints like GET /health — which displays the current application health, and GET /metrics — which lists metrics concerning the application, including running
+counts of requests against certain endpoints. 
 
 #### Spring Data JPA
 Spring Data JPA allows you to create repositories for your data without even having to write a lot of code. The only code you need is a simple interface that extends from another interface and then you're done.
@@ -36,8 +39,5 @@ mvn clean package
 
 Now you can run the Java application quite easily:
 ```
-cd target
-java -jar ng-spring-boot-1.0.0.jar
+java -jar target\ng-springboot-markets-dashboard-1.0.0.jar
 ```
-
-"# ng-springboot-markets-dashboard" 
