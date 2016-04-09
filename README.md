@@ -1,4 +1,4 @@
-# ng-springboot-markets-dashboard - Rapid prototyping with Spring Boot and AngularJS
+# Rapid prototyping with Spring Boot and AngularJS
 This example demonstrates how **Spring Boot**, **Spring Data JPA** and in the front-end **AngularJS** can be used together to write micro services based web applications easily.
 In this code example I'm demonstrating this by creating a full fledged Financial Markets analysis dashboard for Africa's top 3 markets.
 
