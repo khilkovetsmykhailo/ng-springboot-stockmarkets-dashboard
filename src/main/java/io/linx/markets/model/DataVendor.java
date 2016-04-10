@@ -1,4 +1,4 @@
-package io.lingani.model;
+package io.linx.markets.model;
 
 // default package
 // Generated 16 Jun 2015 7:02:15 PM by Hibernate Tools 4.3.1

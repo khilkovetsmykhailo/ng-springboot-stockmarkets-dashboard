@@ -1,4 +1,4 @@
-package io.lingani.model;
+package io.linx.markets.model;
 
 // default package
 // Generated 16 Jun 2015 7:02:15 PM by Hibernate Tools 4.3.1
@@ -47,11 +47,11 @@ public class Symbol implements java.io.Serializable {
 	private Sector sector;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	// @Column(name = "created", nullable = false)
+	@Column(name = "created", nullable = false)
 	private Date created;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	// @Column(name = "updated", nullable = false)
+	@Column(name = "updated", nullable = false)
 	private Date updated;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "symbol")

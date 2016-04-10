@@ -1,4 +1,4 @@
-package io.lingani.model;
+package io.linx.markets.model;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * DailyPrice created by Lingani
@@ -29,10 +31,12 @@ public class DailyPriceData implements java.io.Serializable {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "data_vendor_id", nullable = false)
+	@JsonIgnore
 	private DataVendor dataVendor;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "symbol_id", nullable = false)
+	@JsonIgnore
     private Symbol symbol;
 	
 	@Temporal(TemporalType.TIMESTAMP)

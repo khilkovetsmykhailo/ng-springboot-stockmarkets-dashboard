@@ -1,9 +1,11 @@
-package io.lingani.model;
+package io.linx.markets.model;
 
 // default package
 // Generated 16 Jun 2015 7:02:15 PM by Hibernate Tools 4.3.1
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Date;
 
@@ -23,6 +25,7 @@ public class FundamentalData implements java.io.Serializable {
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "symbol_id", nullable = false)
+    @JsonIgnore
     private Symbol symbol;
     
     @Column(name = "description", length = 1000)

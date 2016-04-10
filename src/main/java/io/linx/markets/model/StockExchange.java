@@ -1,4 +1,4 @@
-package io.lingani.model;
+package io.linx.markets.model;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -15,6 +15,8 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * StockExchange created by Lingani
@@ -52,6 +54,7 @@ public class StockExchange implements java.io.Serializable {
 	private Date updated;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "stockExchange")
+	@JsonIgnore
 	private Set<Symbol> symbols = new HashSet<Symbol>(0);
 
 	public StockExchange() {

@@ -1,4 +1,4 @@
-package io.lingani.model;
+package io.linx.markets.model;
 
 import javax.persistence.*;
 
