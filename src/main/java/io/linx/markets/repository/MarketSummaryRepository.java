@@ -31,7 +31,7 @@ public interface MarketSummaryRepository extends JpaRepository<StockExchange, In
             "from DailyPriceData dp where dp.symbol.stockExchange.id = :exchangeId and dp.priceDate = (select max(dp.priceDate) from DailyPriceData as dp) " +
             "order by dp.percentageChange asc";
     
-    Pageable topFive = new PageRequest(0, 5);
+    Pageable topFive = PageRequest.of(0, 5);
     
     @Query(marketSummarySQL)
     MarketSummary findMarketSummary(@Param("exchangeId") int exchangeId);	    
@@ -43,11 +43,11 @@ public interface MarketSummaryRepository extends JpaRepository<StockExchange, In
 	List<SymbolPriceData> findTopGainers(@Param("exchangeId") Integer exchangeId, Pageable pageable);
 	
 	default List<SymbolPriceData> findTop5Losers(Integer exchangeId){
-    	return findTopLosers(exchangeId, new PageRequest(0, 5)); 
+    	return findTopLosers(exchangeId, PageRequest.of(0, 5));
     }
 	
 	default List<SymbolPriceData> findTop5Gainers(Integer exchangeId){
-    	return findTopGainers(exchangeId, new PageRequest(0, 5)); 
+    	return findTopGainers(exchangeId, PageRequest.of(0, 5));
     }
 	
 }

@@ -7,6 +7,7 @@ import io.linx.markets.repository.MarketSummaryRepository;
 import io.linx.markets.repository.StockExchangeRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -21,12 +22,13 @@ public class MarketSummaryController {
 	
 	private final MarketSummaryRepository marketSummaryRepository;
 	
-	private final StockExchangeRepository stockExchangeRepository; 
+	private final StockExchangeRepository stockExchangeRepository;
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public StockExchange readStockExchangeDetails(@PathVariable Integer exchangeId){
-		StockExchange stockExchange = stockExchangeRepository.findOne(exchangeId);
-		return stockExchange;
+		Optional<StockExchange> stockExchange = stockExchangeRepository.findById(exchangeId);
+		StockExchange exchange = stockExchange.get();
+		return exchange;
 	}
 	
 	@RequestMapping(value = "/summary", method = RequestMethod.GET)
